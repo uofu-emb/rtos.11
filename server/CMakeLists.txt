@@ -2,6 +2,7 @@
 add_executable(lab11_server
   picow_bt_example_freertos.c
   gatt_counter.c
+  temp_sense.c
 )
 
 target_compile_definitions(lab11_server PRIVATE

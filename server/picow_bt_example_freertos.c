@@ -17,8 +17,7 @@
 #define RUN_FREERTOS_ON_CORE 0
 #endif
 
-#define TEST_TASK_PRIORITY				( tskIDLE_PRIORITY + 2UL )
-#define BLINK_TASK_PRIORITY				( tskIDLE_PRIORITY + 1UL )
+#define BTSTACK_TASK_PRIORITY				( tskIDLE_PRIORITY + 2UL )
 
 int btstack_main(int argc, const char * argv[]);
 static btstack_packet_callback_registration_t hci_event_callback_registration;
@@ -69,7 +68,7 @@ int main()
 {
     stdio_init_all();
     TaskHandle_t task;
-    xTaskCreate(main_task, "TestMainThread", 1024, NULL, TEST_TASK_PRIORITY, &task);
+    xTaskCreate(main_task, "TestMainThread", 1024, NULL, BTSTACK_TASK_PRIORITY, &task);
     vTaskStartScheduler();
     return 0;
 }
